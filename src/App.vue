@@ -6,7 +6,7 @@
 
 <script>
 import QrcodeReader from './components/QrcodeReader'
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
   name: 'app',
@@ -14,26 +14,25 @@ export default {
     QrcodeReader
   },
   methods: {
-    OnSuccess(result) {
+    OnSuccess (result) {
       if ((this.parameters().token || '').length !== 0) {
-        
       }
     },
-    parameters() {
+    parameters () {
       return location.search.split('?').pop().split('&').map(function (p) {
-        var ps = p.split('=');
-        var o = {};
-        o[ps.shift()] = ps.join('=');
-        return o;
+        var ps = p.split('=')
+        var o = {}
+        o[ps.shift()] = ps.join('=')
+        return o
       }).reduce(function (a, b) {
-        var o = a;
+        var o = a
         for (var k in b) {
-          o[k] = b[k];
+          o[k] = b[k]
         }
-        return o;
-      });
+        return o
+      })
     }
-  },
+  }
 }
 </script>
 
