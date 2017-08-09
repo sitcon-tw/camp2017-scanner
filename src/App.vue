@@ -1,18 +1,39 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <qrcode-reader :enable="true" :noResult="true" title="" subTitle="請掃描點數 Qrcode" @OnSuccess="OnSuccess"></qrcode-reader>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import QrcodeReader from './components/QrcodeReader'
+import axios from 'axios'
 
 export default {
   name: 'app',
   components: {
-    Hello
-  }
+    QrcodeReader
+  },
+  methods: {
+    OnSuccess(result) {
+      if ((this.parameters().token || '').length !== 0) {
+        
+      }
+    },
+    parameters() {
+      return location.search.split('?').pop().split('&').map(function (p) {
+        var ps = p.split('=');
+        var o = {};
+        o[ps.shift()] = ps.join('=');
+        return o;
+      }).reduce(function (a, b) {
+        var o = a;
+        for (var k in b) {
+          o[k] = b[k];
+        }
+        return o;
+      });
+    }
+  },
 }
 </script>
 
