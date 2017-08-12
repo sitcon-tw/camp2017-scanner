@@ -19,16 +19,16 @@
       </datalist>
       <p>
         <select v-model="description">
-          <option>勇敢探索攤位，故{{ ((point >= 0) ? '獲得 ': '消耗 ') + point }}</option>
-          <option>因上課表現卓越，{{ ((point >= 0) ? '獲得 ': '消耗 ') + point }}</option>
-          <option>無故鬧事，{{ ((point >= 0) ? '獲得 ': '消耗 ') + point }}</option>
-          <option>不知道為什麼 我就是想，故{{ ((point >= 0) ? '獲得 ': '消耗 ') + point }}</option>
-          <option>活動認真參與，{{ ((point >= 0) ? '獲得 ': '消耗 ') + point }}</option>
+          <option>勇敢探索攤位，故{{ ((point >= 0) ? '獲得 ': '消耗 ')  }}</option>
+          <option>因上課表現卓越，{{ ((point >= 0) ? '獲得 ': '消耗 ')  }}</option>
+          <option>無故鬧事，{{ ((point >= 0) ? '獲得 ': '消耗 ')  }}</option>
+          <option>不知道為什麼 我就是想，故{{ ((point >= 0) ? '獲得 ': '消耗 ')  }}</option>
+          <option>活動認真參與，{{ ((point >= 0) ? '獲得 ': '消耗 ')  }}</option>
           <option>自訂</option>
         </select>
       </p>
       <p>
-        <input v-if="description === '自訂'" type="text" v-model="custom" />{{ ((point >= 0) ? '獲得 ': '消耗 ') + point }}
+        <input v-if="description === '自訂'" type="text" v-model="custom" />{{ ((point >= 0) ? '獲得 ': '消耗 ')  }}
       </p>
       <button type="submit" @click="generate">產生</button>
     </template>
@@ -95,7 +95,7 @@ export default {
       if (this.description !== '') {
         return this.description
       } else {
-        return this.custom + ((this.point >= 0) ? '獲得 ' : '消耗 ') + this.point
+        return this.custom + ((this.point >= 0) ? '獲得 ' : '消耗 ')
       }
     }
   },
