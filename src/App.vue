@@ -109,7 +109,7 @@ export default {
             alert(res.data.status)
             self.lock = false
           }).catch(function (error) {
-            alert(error.message)
+            console.log(error.message)
             self.lock = false
           })
         }
