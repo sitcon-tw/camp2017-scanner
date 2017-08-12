@@ -68,7 +68,8 @@ export default {
       description: '',
       custom: '',
       coupon: '',
-      status: []
+      status: [],
+      lock: false
     }
   },
   beforeMount () {
@@ -100,12 +101,18 @@ export default {
   },
   methods: {
     OnSuccess (result) {
-      if ((this.parameters().id || '').length !== 0) {
-        this.api.post('consume', qs.stringify({group_id: this.parameters().id, coupon: result})).then(function (res) {
-          alert(res.data.status)
-        }).catch(function (error) {
-          alert(error.message)
-        })
+      if (!this.lock) {
+        var self = this
+        if ((this.parameters().id || '').length !== 0) {
+          this.lock = true
+          this.api.post('consume', qs.stringify({group_id: this.parameters().id, coupon: result})).then(function (res) {
+            alert(res.data.status)
+            self.lock = false
+          }).catch(function (error) {
+            alert(error.message)
+            self.lock = false
+          })
+        }
       }
     },
     parameters () {
