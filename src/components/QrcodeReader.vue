@@ -131,7 +131,7 @@ export default {
   display: block;
   margin: auto;
   min-height: 300px;
-  background: url("~static/uploadfile.png");
+  background: url("../assets/uploadfile.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
