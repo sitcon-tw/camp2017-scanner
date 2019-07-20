@@ -69,7 +69,7 @@
         </tr>
       </table>
     </template>
-  
+
   </div>
 </template>
 
@@ -137,7 +137,7 @@ export default {
   },
   beforeMount () {
     var config = {
-      baseURL: 'https://ccip.coscup.org/',
+      baseURL: 'https://camp-api.sitcon.party/',
       timeout: 3000
     }
     this.api = axios.create(config)
