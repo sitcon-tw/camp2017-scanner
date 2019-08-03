@@ -12442,7 +12442,8 @@ goog.scope(function() {
       document.createElement('canvas'));
     this.mediaVideo_ = /** @type {HTMLVideoElement} */ (
       document.createElement('video'));
-    this.mediaVideo_.setAttribute('autoplay', 'true');
+    this.mediaVideo_.setAttribute('muted', 'true');
+    this.mediaVideo_.setAttribute('playsinline', 'true');
     this.backContext_ = /** @type {CanvasRenderingContext2D} */ (
       this.backCanvas_.getContext('2d'));
   };
@@ -12577,6 +12578,8 @@ goog.scope(function() {
     } catch (error) {
       this.mediaVideo_.src = window.URL.createObjectURL(stream);
     }
+    this.mediaVideo_.muted = true;
+    this.mediaVideo_.autoplay = true;
     this.mediaVideo_.play();
     this.stream_ = stream;
   };
@@ -41660,3 +41663,4 @@ goog.require('w69b.qr.decoding');
 goog.require('w69b.qr.encoding');
 goog.require('w69b.qr.licenses');
 goog.require('w69b.qr.ui.ContinuousScanner');
+
