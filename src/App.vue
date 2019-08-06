@@ -6,16 +6,16 @@
     </template>
     <template v-else-if='mode === "admin"'>
       <p style='text-align:center;'>{{ (point >= 0) ? '獲得 ': '' }}分數：</p>
-      <input type='number' max='500' min='-500' step='10' value='0' list='defaultNumbers' style='text-align:center;width:150px;height:150px;font-size:1.6rem;' v-model='point' />
+      <input type='number' max='1000' min='-100000000' step='100' value='0' list='defaultNumbers' style='text-align:center;width:150px;height:150px;font-size:1.6rem;' v-model='point' />
       <datalist id='defaultNumbers'>
+        <option value='1000'></option>
+        <option value='500'></option>
+        <option value='200'></option>
         <option value='100'></option>
-        <option value='50'></option>
-        <option value='20'></option>
-        <option value='10'></option>
-        <option value='-10'></option>
-        <option value='-20'></option>
-        <option value='-50'></option>
         <option value='-100'></option>
+        <option value='-200'></option>
+        <option value='-500'></option>
+        <option value='-1000'></option>
       </datalist>
       <p>
         <select v-model='description'>
@@ -96,40 +96,44 @@ export default {
       lock: false,
       group: [
         {
-          'groupId': -1001134159252,
-          'name': '第一小隊'
+          groupId: -1001221619597,
+          name: '第一小隊'
         },
         {
-          'groupId': -1001137253117,
-          'name': '第二小隊'
+          groupId: -1001376339069,
+          name: '第二小隊'
         },
         {
-          'groupId': -1001109548642,
-          'name': '第三小隊'
+          groupId: -1001461040548,
+          name: '第三小隊'
         },
         {
-          'groupId': -1001099511354,
-          'name': '第四小隊'
+          groupId: -1001457570830,
+          name: '第四小隊'
         },
         {
-          'groupId': -1001110498737,
-          'name': '第五小隊'
+          groupId: -1001345724637,
+          name: '第五小隊'
         },
         {
-          'groupId': -1001083357529,
-          'name': '第六小隊'
+          groupId: -1001402246405,
+          name: '第六小隊'
         },
         {
-          'groupId': -1001110748486,
-          'name': '第七小隊'
+          groupId: -1001380073416,
+          name: '第七小隊'
         },
         {
-          'groupId': -1001113956597,
-          'name': '第八小隊'
+          groupId: -1001342649480,
+          name: '第八小隊'
         },
         {
-          'groupId': -1001128884986,
-          'name': '開發小隊'
+          groupId: -1001387397358,
+          name: '第九小隊'
+        },
+        {
+          groupId: -1001396420235,
+          name: '第十小隊'
         }
       ],
       problems: []
