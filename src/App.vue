@@ -183,7 +183,8 @@ export default {
   },
   methods: {
     OnSuccess (result) {
-      if (!this.lock) {
+      if (result.startsWith('http')) window.location.href = result
+      else if (!this.lock) {
         var self = this
         if ((this.parameters().id || '').length !== 0) {
           this.lock = true
